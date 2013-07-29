@@ -2,6 +2,11 @@ $(function(){
 	$("#close-generic-modal-dialog-link").click(hideGenericModalDialog);
 });
 
+function showGenericModalDialog() {
+	showGenericModalDialog("");
+	return false;
+}
+
 function showGenericModalDialog(ihtml) {
 	
 	positionGenericModalDialog();
@@ -9,7 +14,9 @@ function showGenericModalDialog(ihtml) {
 	var bodyHeight = $(document).height();
 	$("#generic-modal-dialog-background").height(bodyHeight);
 	$("#generic-modal-dialog-background").fadeIn(300);
-	$("#generic-modal-dialog-content").html(ihtml);
+	if(ihtml != "") {
+		$("#generic-modal-dialog-content").html(ihtml);
+	}
 	return false;
 }
 
